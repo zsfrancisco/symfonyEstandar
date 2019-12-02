@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+
+{% block body %}
+<br>
+Hola {{ parametro }}
+
+<br>
+<a href="{{ path('estandar') }}" > Volver a Estandar principal </a>
+
+<br>
+Este es el valor de la suma : {{ suma }}
+
+{% if suma > 18 %}
+    <p>La suma es mayor que 18</p>
+    {% else %} <p>La suma no es mayor que 18</p>
+{% endif %}
+
+<br>
+
+Mi nombre es: {{ nombre }}
+
+<br>
+
+{% set foo = nombre |split(',') %}
+
+{#{{ foo[2] }}#}
+
+<h1>Mi nombre en un ul</h1>
+<ul>
+    {% for name in foo %}
+        <li>{{ name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+{% block javascripts %} {{ parent() }} {% endblock %}

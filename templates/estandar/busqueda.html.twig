@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+
+{% block body %}
+
+    <p>Hola</p>
+    {# <p>{{ nombre_categoria }}</p> 
+    <p>{{ nombre_producto }}</p> #}
+    {{ dump(buscarPorCodigo) }}
+
+    <h1>Productos</h1>
+    
+
+    {#
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }}</li>
+            <li>{{ producto.codigo }}</li>
+            <li>{{ producto.categoria.id }}</li>
+        {% endfor %}
+    </ul> #}
+
+    <hr>
+
+    {{ buscarPorCodigo[0].id }}
+    {{ buscarPorCodigo[0].codigo }}
+    {{ buscarPorCodigo[0].nombre }}
+
+
+    
+{% endblock %}
+{% block javascripts %} {{ parent() }} {% endblock %}

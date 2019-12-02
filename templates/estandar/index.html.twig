@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EstandarController!{% endblock %}
+
+{% block body %}
+
+{# Esto es un comentario en Twig #}
+{#lo siguiente será una variable definida con set #}
+
+{% set variable = 'Hola mundo' %}
+<br>
+
+<a href="{{ path('acerca', {nombre: 'Francisco Zambrano'}) }}" > Ir a acerca </a> 
+<br>
+
+<h1>Mi variable: {{ variable }} </h1>
+<br>
+
+
+{% endblock %}

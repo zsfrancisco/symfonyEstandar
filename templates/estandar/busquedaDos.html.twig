@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %} {{ parent() }} {% endblock %}
+
+{% block body %}
+
+    
+    {{ dump(productos) }}
+
+    <h1>Productos</h1>
+
+    {{ productos[0].id }}
+    {{ productos[0].nombre }} --
+    {{ productos[0].categoria.getNombreCategoria() }}
+<hr>
+<hr>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.id }}</li>
+            <li>{{ producto.nombre }}</li>
+            <li>{{ producto.categoria.getNombreCategoria() }}</li>
+            <hr>
+        {% endfor %}
+    </ul>
+
+    
+{% endblock %}
+{% block javascripts %} {{ parent() }} {% endblock %}
